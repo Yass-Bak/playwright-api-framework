@@ -1,12 +1,10 @@
 # Playwright API Testing Framework
 
-[![API Tests](https://github.com/yourusername/playwright-api-framework/actions/workflows/api-tests.yml/badge.svg)](https://github.com/yourusername/playwright-api-framework/actions/workflows/api-tests.yml)
-
-## 🚀 Overview
+##  Overview
 
 Production-grade API testing framework built with **Playwright**, **TypeScript**, and **Node.js**. This framework demonstrates enterprise-level test automation practices for REST API testing using GitHub REST API as the system under test.
 
-## 🎯 Why This Framework is Senior-Level
+##  Why This Framework is Senior-Level
 
 ### Architecture & Design
 - **Clean Architecture**: Separation of concerns with distinct layers (clients, services, models, utilities)
@@ -35,7 +33,7 @@ Production-grade API testing framework built with **Playwright**, **TypeScript**
 - **Parallel Execution**: Fast test execution
 - **Retry Mechanism**: Flaky test handling
 
-## 📁 Project Structure
+##  Project Structure
 
 ```
 playwright-api-framework/
@@ -74,7 +72,7 @@ playwright-api-framework/
 └── README.md                         # This file
 ```
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 | Technology | Purpose |
 |------------|---------|
@@ -86,14 +84,14 @@ playwright-api-framework/
 | **dotenv** | Environment management |
 | **GitHub Actions** | CI/CD automation |
 
-## 📋 Prerequisites
+##  Prerequisites
 
 - Node.js 18+ 
 - npm or yarn
 - GitHub Personal Access Token
 - Git
 
-## 🔧 Installation
+##  Installation
 
 ### 1. Clone the repository
 
@@ -127,7 +125,7 @@ PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1
 
 Required scopes: `repo`, `delete_repo`
 
-## 🚀 Running Tests
+##  Running Tests
 
 ### Run all tests
 
@@ -155,7 +153,7 @@ npm run report:html
 npm run report
 ```
 
-## 📊 Sample Test Output
+##  Sample Test Output
 
 ```
 Running 9 tests using 4 workers
@@ -169,29 +167,29 @@ Running 9 tests using 4 workers
   9 passed (8.4s)
 ```
 
-## 🎯 Test Coverage
+##  Test Coverage
 
 ### User API Tests
-- ✅ Get user profile
-- ✅ Validate user schema
-- ✅ Verify required fields
-- ✅ Get user repositories
+-  Get user profile
+-  Validate user schema
+-  Verify required fields
+-  Get user repositories
 
 ### Repository CRUD Tests
-- ✅ Full CRUD lifecycle (Create → Read → Update → Delete → Verify)
-- ✅ Dynamic repository naming with timestamps
-- ✅ Schema validation
-- ✅ Update repository description
-- ✅ Delete repository verification
+-  Full CRUD lifecycle (Create → Read → Update → Delete → Verify)
+-  Dynamic repository naming with timestamps
+-  Schema validation
+-  Update repository description
+-  Delete repository verification
 
 ### Negative Tests
-- ✅ 404 - Non-existent user
-- ✅ 404 - Non-existent repository
-- ✅ 422 - Invalid repository name
-- ✅ 401 - Unauthorized access
-- ✅ 422 - Duplicate repository creation
+-  404 - Non-existent user
+-  404 - Non-existent repository
+-  422 - Invalid repository name
+-  401 - Unauthorized access
+-  422 - Duplicate repository creation
 
-## 🏗️ Framework Features
+##  Framework Features
 
 ### 1. Client Layer Abstraction
 ```typescript
@@ -221,17 +219,17 @@ const headers = getAuthHeaders();
 const repoName = `test-repo-${Date.now()}`;
 ```
 
-## 📈 CI/CD Pipeline
+##  CI/CD Pipeline
 
 GitHub Actions workflow automatically:
-- ✅ Runs on push, PR, and daily schedule
-- ✅ Installs dependencies (skips browser download)
-- ✅ Executes all tests
-- ✅ Generates Allure reports
-- ✅ Uploads test artifacts
-- ✅ Maintains 30-day retention
+-  Runs on push, PR, and daily schedule
+-  Installs dependencies (skips browser download)
+-  Executes all tests
+-  Generates Allure reports
+-  Uploads test artifacts
+-  Maintains 30-day retention
 
-## 🎓 Learning Outcomes
+##  Learning Outcomes
 
 This framework demonstrates:
 
@@ -242,24 +240,12 @@ This framework demonstrates:
 5. **DevOps Integration**: CI/CD pipeline with GitHub Actions
 6. **Documentation**: Clear, professional documentation
 
-## 🤝 Contributing
+##  Contributing
 
 1. Fork the repository
 2. Create a feature branch
 3. Commit your changes
 4. Push to the branch
 5. Open a Pull Request
-
-## 📝 License
-
-MIT License - feel free to use this for your portfolio or projects
-
-## 👨‍💻 Author
-
-**Senior SDET / Automation Architect**
-
-This framework showcases enterprise-level API testing capabilities suitable for senior automation engineering roles.
-
----
 
 **⭐ If you find this framework helpful, please give it a star!**
