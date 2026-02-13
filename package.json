@@ -1,0 +1,33 @@
+{
+  "name": "playwright-api-framework",
+  "version": "1.0.0",
+  "description": "Production-grade API Testing Framework using Playwright and TypeScript",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "cross-env PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1 playwright test",
+    "test:users": "cross-env PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1 playwright test tests/users",
+    "test:repos": "cross-env PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1 playwright test tests/repos",
+    "test:negative": "cross-env PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1 playwright test tests/negative",
+    "report": "allure generate allure-results --clean -o allure-report && allure open allure-report",
+    "report:html": "playwright show-report"
+  },
+  "keywords": [
+    "playwright",
+    "api-testing",
+    "typescript",
+    "automation",
+    "github-api"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.58.2",
+    "@types/node": "^22.10.5",
+    "ajv": "^8.17.1",
+    "allure-playwright": "^3.0.6",
+    "cross-env": "^7.0.3",
+    "dotenv": "^16.4.7",
+    "typescript": "^5.7.3"
+  }
+}
