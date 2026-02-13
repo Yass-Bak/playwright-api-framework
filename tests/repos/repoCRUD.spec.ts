@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
-import { GitHubClient } from '../../api/clients/githubClient.js';
-import { SchemaValidator, repoSchema } from '../../utils/schemaValidator.js';
-import { ENV } from '../../utils/env.js';
+import { GitHubClient } from '../../api/clients/githubClient';
+import { SchemaValidator, repoSchema } from '../../utils/schemaValidator';
+import { ENV } from '../../utils/env';
 
 test.describe('GitHub Repos API - Full CRUD Flow', () => {
   let client: GitHubClient;

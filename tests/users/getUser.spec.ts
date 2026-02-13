@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
-import { GitHubClient } from '../../api/clients/githubClient.js';
-import { SchemaValidator, userSchema } from '../../utils/schemaValidator.js';
+import { GitHubClient } from '../../api/clients/githubClient';
+import { SchemaValidator, userSchema } from '../../utils/schemaValidator';
 import testData from '../../data/testData.json';
 
 test.describe('GitHub Users API - GET User Profile', () => {

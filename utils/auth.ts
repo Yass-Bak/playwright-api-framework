@@ -1,4 +1,4 @@
-import { ENV } from './env.js';
+import { ENV } from './env';
 
 export function getAuthHeaders(): Record<string, string> {
   return {

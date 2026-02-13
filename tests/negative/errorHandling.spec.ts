@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import { GitHubClient } from '../../api/clients/githubClient.js';
+import { GitHubClient } from '../../api/clients/githubClient';
 
 test.describe('GitHub API - Negative Test Cases', () => {
   let client: GitHubClient;

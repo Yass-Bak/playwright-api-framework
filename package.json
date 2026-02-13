@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "Production-grade API Testing Framework using Playwright and TypeScript",
   "main": "index.js",
-  "type": "module",
   "scripts": {
     "test": "cross-env PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1 playwright test",
     "test:users": "cross-env PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1 playwright test tests/users",

@@ -1,7 +1,7 @@
 import { APIRequestContext } from '@playwright/test';
-import { getAuthHeaders } from '../../utils/auth.js';
-import { Logger } from '../../utils/logger.js';
-import { ENV } from '../../utils/env.js';
+import { getAuthHeaders } from '../../utils/auth';
+import { Logger } from '../../utils/logger';
+import { ENV } from '../../utils/env';
 
 export class GitHubClient {
   private request: APIRequestContext;
