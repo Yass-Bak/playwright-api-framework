@@ -1,4 +1,5 @@
 import { test, expect } from '@playwright/test';
+import { allure } from 'allure-playwright';
 import { GitHubClient } from '../../api/clients/githubClient';
 import { SchemaValidator, userSchema } from '../../utils/schemaValidator';
 import testData from '../../data/testData.json';
@@ -11,6 +12,10 @@ test.describe('GitHub Users API - GET User Profile', () => {
   });
 
   test('should get user profile successfully', async () => {
+    allure.feature('Users');
+    allure.label('endpoint', 'GET /users/{username}');
+    allure.tag('positive');
+
     const username = testData.testUsers[0].username;
     const response = await client.getUser(username);
 
@@ -23,6 +28,10 @@ test.describe('GitHub Users API - GET User Profile', () => {
   });
 
   test('should validate user profile schema', async () => {
+    allure.feature('Users');
+    allure.label('endpoint', 'GET /users/{username}');
+    allure.tag('schema');
+
     const username = testData.testUsers[0].username;
     const response = await client.getUser(username);
 
@@ -33,6 +42,10 @@ test.describe('GitHub Users API - GET User Profile', () => {
   });
 
   test('should verify user profile contains required fields', async () => {
+    allure.feature('Users');
+    allure.label('endpoint', 'GET /users/{username}');
+    allure.tag('positive');
+
     const username = testData.testUsers[0].username;
     const response = await client.getUser(username);
 
@@ -49,6 +62,10 @@ test.describe('GitHub Users API - GET User Profile', () => {
   });
 
   test('should get user repositories', async () => {
+    allure.feature('Users');
+    allure.label('endpoint', 'GET /users/{username}/repos');
+    allure.tag('positive');
+
     const username = testData.testUsers[0].username;
     const response = await client.getUserRepos(username);
 

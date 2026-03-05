@@ -1,4 +1,5 @@
 import { test, expect } from '@playwright/test';
+import { allure } from 'allure-playwright';
 import { GitHubClient } from '../../api/clients/githubClient';
 import { SchemaValidator, repoSchema } from '../../utils/schemaValidator';
 import { ENV } from '../../utils/env';
@@ -14,6 +15,14 @@ test.describe('GitHub Repos API - Full CRUD Flow', () => {
   });
 
   test('should complete full CRUD lifecycle for repository', async () => {
+    allure.feature('Repositories');
+    allure.label('endpoint', 'POST /user/repos');
+    allure.label('endpoint', 'GET /repos/{owner}/{repo}');
+    allure.label('endpoint', 'PATCH /repos/{owner}/{repo}');
+    allure.label('endpoint', 'DELETE /repos/{owner}/{repo}');
+    allure.tag('positive');
+    allure.label('scenario', 'crud-lifecycle');
+
     // CREATE
     const createResponse = await client.createRepo(repoName, 'Test repository for API automation');
     expect(createResponse.status()).toBe(201);
@@ -52,6 +61,11 @@ test.describe('GitHub Repos API - Full CRUD Flow', () => {
   });
 
   test('should create repository with dynamic name', async () => {
+    allure.feature('Repositories');
+    allure.label('endpoint', 'POST /user/repos');
+    allure.tag('positive');
+    allure.label('scenario', 'create');
+
     const response = await client.createRepo(repoName);
     
     expect(response.status()).toBe(201);
@@ -65,6 +79,11 @@ test.describe('GitHub Repos API - Full CRUD Flow', () => {
   });
 
   test('should update repository description', async () => {
+    allure.feature('Repositories');
+    allure.label('endpoint', 'PATCH /repos/{owner}/{repo}');
+    allure.tag('positive');
+    allure.label('scenario', 'update');
+
     // Setup - Create repo
     await client.createRepo(repoName);
 
@@ -82,6 +101,11 @@ test.describe('GitHub Repos API - Full CRUD Flow', () => {
   });
 
   test('should delete repository successfully', async () => {
+    allure.feature('Repositories');
+    allure.label('endpoint', 'DELETE /repos/{owner}/{repo}');
+    allure.tag('positive');
+    allure.label('scenario', 'delete');
+
     // Setup - Create repo
     await client.createRepo(repoName);
 

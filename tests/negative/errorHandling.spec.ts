@@ -1,4 +1,5 @@
 import { test, expect } from '@playwright/test';
+import { allure } from 'allure-playwright';
 import { GitHubClient } from '../../api/clients/githubClient';
 
 test.describe('GitHub API - Negative Test Cases', () => {
@@ -9,6 +10,10 @@ test.describe('GitHub API - Negative Test Cases', () => {
   });
 
   test('should return 404 for non-existent user', async () => {
+    allure.feature('Negative');
+    allure.label('endpoint', 'GET /users/{username}');
+    allure.tag('negative');
+
     const response = await client.getUser('this-user-definitely-does-not-exist-99999');
 
     expect(response.status()).toBe(404);
@@ -18,6 +23,10 @@ test.describe('GitHub API - Negative Test Cases', () => {
   });
 
   test('should return 404 for non-existent repository', async () => {
+    allure.feature('Negative');
+    allure.label('endpoint', 'GET /repos/{owner}/{repo}');
+    allure.tag('negative');
+
     const response = await client.getRepo('octocat', 'non-existent-repo-99999');
 
     expect(response.status()).toBe(404);
@@ -27,6 +36,11 @@ test.describe('GitHub API - Negative Test Cases', () => {
   });
 
   test('should handle invalid repository name', async () => {
+    allure.feature('Negative');
+    allure.label('endpoint', 'POST /user/repos');
+    allure.tag('negative');
+    allure.label('scenario', 'invalid-name');
+
     const invalidRepoName = 'owner/repo'; // Slashes are not allowed in name field
     const response = await client.createRepo(invalidRepoName);
 
@@ -44,6 +58,11 @@ test.describe('GitHub API - Negative Test Cases', () => {
   });
 
   test('should return error for unauthorized access', async ({ playwright }) => {
+    allure.feature('Negative');
+    allure.label('endpoint', 'GET /user/repos');
+    allure.tag('negative');
+    allure.label('scenario', 'unauthorized');
+
     // Create new context explicitly without auth headers
     const apiContext = await playwright.request.newContext({
       baseURL: 'https://api.github.com',
@@ -63,6 +82,11 @@ test.describe('GitHub API - Negative Test Cases', () => {
   });
 
   test('should handle duplicate repository creation', async () => {
+    allure.feature('Negative');
+    allure.label('endpoint', 'POST /user/repos');
+    allure.tag('negative');
+    allure.label('scenario', 'duplicate');
+
     const repoName = `duplicate-test-${Date.now()}`;
     
     // Create first repo
