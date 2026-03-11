@@ -4,8 +4,6 @@
 
 Production-grade API testing framework built with **Playwright**, **TypeScript**, and **Node.js**. This framework demonstrates enterprise-level test automation practices for REST API testing using GitHub REST API as the system under test.
 
-##  Why This Framework is Senior-Level
-
 ### Architecture & Design
 - **Clean Architecture**: Separation of concerns with distinct layers (clients, services, models, utilities)
 - **SOLID Principles**: Single responsibility, dependency injection, interface segregation
@@ -249,3 +247,4 @@ This framework demonstrates:
 5. Open a Pull Request
 
 **⭐ If you find this framework helpful, please give it a star!**
+
